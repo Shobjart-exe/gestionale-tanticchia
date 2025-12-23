@@ -1,0 +1,206 @@
+@import 'variables';
+
+// Layout generale
+body {
+  margin: 0;
+  padding: 0;
+  font-family: BlinkMacSystemFont, -apple-system, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  background-color: $bg-dark;
+  color: $text-primary;
+}
+
+// Container principale
+.app-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+// Sidebar
+.sidebar {
+  width: $sidebar-width;
+  background-color: $bg-sidebar;
+  color: $text-primary;
+  padding: $spacing-large;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  border-right: 1px solid $border-color;
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: $spacing-xlarge;
+    padding-bottom: $spacing-medium;
+    border-bottom: 2px solid $border-color;
+    color: $primary-color;
+  }
+
+  .menu-label {
+    color: $text-muted;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: $spacing-large;
+    margin-bottom: $spacing-small;
+  }
+
+  .menu-list {
+    a {
+      color: $text-secondary;
+      border-radius: $border-radius;
+      padding: $spacing-small $spacing-medium;
+      transition: all $transition-speed;
+
+      &:hover {
+        background-color: rgba(82, 148, 226, 0.1);
+        color: $primary-color;
+      }
+
+      &.is-active {
+        background-color: $primary-color;
+        color: white;
+      }
+    }
+
+    ul {
+      margin-left: $spacing-medium;
+      
+      a {
+        font-size: 0.9rem;
+        padding: $spacing-small;
+      }
+    }
+  }
+}
+
+// Main content
+.main-content {
+  margin-left: $sidebar-width;
+  flex: 1;
+  padding: $spacing-xlarge;
+  background-color: $bg-dark;
+  min-height: 100vh;
+
+  .content-header {
+    margin-bottom: $spacing-xlarge;
+
+    h1 {
+      color: $text-primary;
+      margin-bottom: $spacing-small;
+    }
+
+    .breadcrumb {
+      background-color: transparent;
+      padding: 0;
+      
+      a {
+        color: $text-secondary;
+        
+        &:hover {
+          color: $primary-color;
+        }
+      }
+      
+      li.is-active a {
+        color: $text-primary;
+      }
+    }
+  }
+}
+
+// Cards e box
+.content-box {
+  background-color: $bg-card;
+  border-radius: $border-radius;
+  padding: $spacing-large;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: $spacing-large;
+  border: 1px solid $border-color;
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    transition: box-shadow $transition-speed;
+  }
+  
+  h2, h3, h4 {
+    color: $text-primary;
+  }
+}
+
+// Dashboard cards
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: $spacing-large;
+  margin-bottom: $spacing-xlarge;
+}
+
+.stat-card {
+  background-color: $bg-card;
+  border-radius: $border-radius;
+  padding: $spacing-large;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all $transition-speed;
+  border-left: 4px solid $primary-color;
+  border: 1px solid $border-color;
+  border-left-width: 4px;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+
+  .stat-title {
+    color: $text-muted;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: $spacing-small;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+    color: $text-primary;
+    margin-bottom: $spacing-small;
+  }
+
+  .stat-subtitle {
+    color: $text-secondary;
+    font-size: 0.8rem;
+  }
+
+  &.is-success {
+    border-left-color: $secondary-color;
+  }
+
+  &.is-warning {
+    border-left-color: $warning-color;
+  }
+
+  &.is-danger {
+    border-left-color: $danger-color;
+  }
+
+  &.is-info {
+    border-left-color: $info-color;
+  }
+}
+
+// Placeholder
+.placeholder-content {
+  text-align: center;
+  padding: $spacing-xlarge * 2;
+  color: $text-secondary;
+
+  .icon {
+    font-size: 4rem;
+    margin-bottom: $spacing-large;
+  }
+
+  h2 {
+    color: $text-primary;
+    margin-bottom: $spacing-medium;
+  }
+}
