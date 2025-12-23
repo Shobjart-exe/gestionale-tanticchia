@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Scheda Materia Prima - Gestionale Sartoria</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <nav class="navbar is-dark box-shadow-y">
+        <div class="navbar-brand">
+            <a class="navbar-item has-text-weight-bold" href="../../index.html">
+                🔙 Dashboard
+            </a>
+            <a class="navbar-item" href="../materie-prime.html">
+                🧵 Magazzino Materie Prime
+            </a>
+        </div>
+    </nav>
+
+    <section class="section has-background-light" style="min-height: 100vh;">
+        <div class="container">
+            
+            <div class="level mb-5">
+                <div class="level-left">
+                    <h1 class="title is-3 has-text-dark">🧵 Scheda Materiale</h1>
+                </div>
+                <div class="level-right">
+                    <span class="tag is-medium is-light" id="stock-status">NUOVO</span>
+                </div>
+            </div>
+
+            <form id="form-materia">
+                
+                <div class="columns is-multiline">
+                    
+                    <div class="column is-12">
+                        <div class="box border-top-info">
+                            <h3 class="title is-5 mb-4"><i class="fas fa-fingerprint"></i> Identificazione</h3>
+                            <div class="columns">
+                                <div class="column is-2">
+                                    <div class="field">
+                                        <label class="label">Codice / Numero</label>
+                                        <div class="control">
+                                            <input class="input has-text-weight-bold" type="text" id="codice" placeholder="Es. MAT-001">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-6">
+                                    <div class="field">
+                                        <label class="label">Nome Materia Prima</label>
+                                        <div class="control has-icons-left">
+                                            <input class="input" type="text" id="nome" placeholder="Es. Seta Rossa Damascata">
+                                            <span class="icon is-small is-left"><i class="fas fa-tag"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="column is-4">
+                                    <div class="field">
+                                        <label class="label">Tipologia</label>
+                                        <div class="control has-icons-left">
+                                            <div class="select is-fullwidth">
+                                                <select id="categoria">
+                                                    <option value="Tessuto">Tessuto</option>
+                                                    <option value="Filato">Filato / Cucito</option>
+                                                    <option value="Merceria">Merceria (Bottoni, Zip)</option>
+                                                    <option value="Fodera">Fodera / Rinforzo</option>
+                                                    <option value="Altro">Altro</option>
+                                                </select>
+                                            </div>
+                                            <span class="icon is-small is-left"><i class="fas fa-layer-group"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-6">
+                        <div class="box" style="height: 100%">
+                            <h3 class="title is-5 mb-4"><i class="fas fa-palette"></i> Caratteristiche</h3>
+                            
+                            <div class="field">
+                                <label class="label">Colore Principale</label>
+                                <div class="field has-addons">
+                                    <div class="control">
+                                        <input class="input" type="color" id="colore_hex" value="#cccccc" style="width: 50px; padding: 2px;">
+                                    </div>
+                                    <div class="control is-expanded">
+                                        <input class="input" type="text" id="colore_nome" placeholder="Nome colore (es. Rosso Rubino)">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Materiale / Composizione</label>
+                                <div class="control has-icons-left">
+                                    <input class="input" type="text" id="composizione" placeholder="Es. 100% Cotone, Misto Lana...">
+                                    <span class="icon is-small is-left"><i class="fas fa-scroll"></i></span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Fornitore Principale</label>
+                                <div class="control has-icons-left">
+                                    <div class="select is-fullwidth">
+                                        <select id="fornitore_id">

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordini - Gestionale</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo">Gestionale</div>
+            <aside class="menu">
+                <p class="menu-label">Generale</p>
+                <ul class="menu-list">
+                    <li><a href="../index.html">Dashboard</a></li>
+                    <li><a href="../economia.html">Economia</a></li>
+                </ul>
+
+                <p class="menu-label">Anagrafiche</p>
+                <ul class="menu-list">
+                    <li><a href="../clienti.html">Clienti</a></li>
+                    <li><a href="../fornitori.html">Fornitori</a></li>
+                </ul>
+
+                <p class="menu-label">Gestione</p>
+                <ul class="menu-list">
+                    <li><a href="../documenti.html">Documenti</a></li>
+                    <li><a href="index.html" class="is-active">Ordini</a></li>
+                    <li><a href="../magazzino/index.html">Magazzino</a></li>
+                    <li><a href="../produzione.html">Produzione</a></li>
+                </ul>
+            </aside>
+        </aside>
+        <main class="main-content">
+            <div class="content-header">
+                <h1 class="title is-2">Gestione Ordini</h1>
+                <nav class="breadcrumb" aria-label="breadcrumbs">
+                    <ul>
+                        <li><a href="../index.html">Dashboard</a></li>
+                        <li class="is-active"><a href="#" aria-current="page">Ordini</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="dashboard-cards">
+                <div class="stat-card">
+                    <div class="stat-title">Ordini Totali</div>
+                    <div class="stat-value">0</div>
+                    <div class="stat-subtitle"></div>
+                </div>
+                <div class="stat-card is-warning">
+                    <div class="stat-title">In Attesa</div>
+                    <div class="stat-value">0</div>
+                    <div class="stat-subtitle"></div>
+                </div>
+                <div class="stat-card is-success">
+                    <div class="stat-title">Evasi</div>
+                    <div class="stat-value">0</div>
+                    <div class="stat-subtitle"></div>
+                </div>
+                <div class="stat-card is-info">
+                    <div class="stat-title">Valore Totale</div>
+                    <div class="stat-value">€ 0</div>
+                    <div class="stat-subtitle"></div>
+                </div>
+            </div>
+
+            <!-- Ordini in Entrata -->
+            <div class="content-box">
+                <h2 class="title is-4 mb-3">📥 Ordini in Entrata</h2>
+                <p class="subtitle is-6 has-text-grey">Ordini da fornitori</p>
+                <div class="columns">
+                    <div class="column">
+                        <a href="in/attesa.html" style="text-decoration: none;">
+                            <div class="stat-card is-warning" style="cursor: pointer;">
+                                <div class="stat-title">In Attesa</div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-subtitle"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="in/evasi.html" style="text-decoration: none;">
+                            <div class="stat-card is-success" style="cursor: pointer;">
+                                <div class="stat-title">Evasi</div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-subtitle"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ordini in Uscita -->
+            <div class="content-box">
+                <h2 class="title is-4 mb-3">📤 Ordini in Uscita</h2>
+                <p class="subtitle is-6 has-text-grey">Ordini da clienti</p>
+                <div class="columns">
+                    <div class="column">
+                        <a href="out/attesa.html" style="text-decoration: none;">
+                            <div class="stat-card is-danger" style="cursor: pointer;">
+                                <div class="stat-title">In Attesa</div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-subtitle"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="column">
+                        <a href="out/evasi.html" style="text-decoration: none;">
+                            <div class="stat-card is-success" style="cursor: pointer;">
+                                <div class="stat-title">Evasi</div>
+                                <div class="stat-value">0</div>
+                                <div class="stat-subtitle"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Overview -->
+            <div class="columns">
+                <div class="column">
+                    <div class="content-box">
+                        <h3 class="title is-5">Ordini in Scadenza</h3>
+                        <div class="info-box is-warning">
+                            <p class="has-text-weight-semibold">0 ordini</p>
+                            <p class="is-size-7"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content-box">
+                        <h3 class="title is-5">Performance</h3>
+                        <div class="info-box is-success">
+                            <p class="has-text-weight-semibold">0%</p>
+                            <p class="is-size-7"></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content-box">
+                        <h3 class="title is-5">Tempo Medio</h3>
+                        <div class="info-box is-info">
+                            <p class="has-text-weight-semibold">0 giorni</p>
+                            <p class="is-size-7"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
